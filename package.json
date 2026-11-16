@@ -1,0 +1,11 @@
+{
+  "name": "gc-github-actions-lab02",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "lint": "node --check app.js && node --check test/app.test.js",
+    "test": "node --test"
+  }
+}

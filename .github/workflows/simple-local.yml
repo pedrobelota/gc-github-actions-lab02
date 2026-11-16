@@ -1,0 +1,23 @@
+name: Lab 02 - Exercício 01 - Simple Local
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build-node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Preparar demonstração
+        run: sleep 35
+      - name: Exibir versões
+        run: node --version && npm --version
+      - name: Executar aplicação
+        run: npm start

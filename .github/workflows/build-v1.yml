@@ -1,0 +1,21 @@
+name: Lab 02 - Exercício 02 - Build V1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Preparar demonstração
+        run: sleep 35
+      - name: Lint code
+        run: npm run lint
+      - name: Test code
+        run: npm test
+      - name: Deploy code
+        run: echo "Deploying..."
